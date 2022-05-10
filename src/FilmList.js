@@ -1,12 +1,15 @@
 import FilmItem from "./FilmItem";
-const FilmList = (props) => {
-  const films = props.films;
+
+const FilmList = ({ films, handleDeleteFilm }) => {
   return (
     <div className="film-list">
       <ul>
         {films.map((film) => (
           <li key={film.imdbID}>
             <FilmItem film={film} />
+            <button onClick={() => handleDeleteFilm(film.imdbID)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
