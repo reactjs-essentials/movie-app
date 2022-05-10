@@ -1,8 +1,12 @@
-import React from "react";
+import { React, useState } from "react";
 import "./style.css";
+import FilmList from "./FilmList";
+
+
+
 
 const Home = () => {
-  const films = [
+  const data = [
     {
       "Title": "Avatar",
       "Year": "2009",
@@ -88,29 +92,13 @@ const Home = () => {
       ]
     }
   ]
+
+  const [films, setFilms] = useState(data);
+
   return (
     <>
-      <h1>Film List</h1>
-      <ul>
-        {films.map((film) => (
-          <li key={film.imdbID}>
-            <div>
-              <dl>
-                <dt>Film:</dt>
-                <dd>{film.Title}</dd>
-                <dt>year:</dt>
-                <dd>{film.Year}</dd>
-                <dt>genre:</dt>
-                <dd>{film.Genre}</dd>
-                <dt>director:</dt>
-                <dd>{film.Director}</dd>
-                <dt>actors:</dt>
-                <dd>{film.Actors}</dd>
-              </dl>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <h1>Films List with Components</h1>
+      <FilmList films={films} />
     </>
   );
 };
