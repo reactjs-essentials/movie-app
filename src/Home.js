@@ -5,6 +5,7 @@ import FilmList from "./FilmList";
 const Home = () => {
   const [films, setFilms] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const handleDeleteFilm = (imdbID) => {
     setIsLoading(true);
@@ -19,9 +20,22 @@ const Home = () => {
 
   useEffect(() => {
     fetch("https://apimocha.com/lab-films/films")
-      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        if (!res.ok) {
+          throw Error(res.status);
+        }
+        return res.json();
+      })
       .then((data) => {
         setFilms(data);
+        setError(null);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        //Connection error
+        console.log(err.message);
+        setError(err.message);
         setIsLoading(false);
       });
   }, []);
@@ -29,6 +43,7 @@ const Home = () => {
   return (
     <>
       <h1>Films List with Components</h1>
+      {error && <p> {error}</p>}
       {isLoading && <p>...loading...</p>}
       {films && <FilmList films={films} handleDeleteFilm={handleDeleteFilm} />}
     </>
