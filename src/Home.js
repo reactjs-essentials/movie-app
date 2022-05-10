@@ -4,21 +4,32 @@ import FilmList from "./FilmList";
 
 const Home = () => {
   const [films, setFilms] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleDeleteFilm = (imdbID) => {
-    const newFilms = films.filter((film) => film.imdbID !== imdbID);
-    setFilms(newFilms);
+    setIsLoading(true);
+    fetch("https://apimocha.com/lab-films/films/" + imdbID, {
+      method: "DELETE",
+    }).then((res) => {
+      const newFilms = films.filter((film) => film.imdbID !== imdbID);
+      setFilms(newFilms);
+      setIsLoading(false);
+    });
   };
 
   useEffect(() => {
     fetch("https://apimocha.com/lab-films/films")
       .then((res) => res.json())
-      .then((data) => setFilms(data));
+      .then((data) => {
+        setFilms(data);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
     <>
       <h1>Films List with Components</h1>
+      {isLoading && <p>...loading...</p>}
       {films && <FilmList films={films} handleDeleteFilm={handleDeleteFilm} />}
     </>
   );
