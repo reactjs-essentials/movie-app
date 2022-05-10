@@ -1,10 +1,27 @@
-import React from "react";
 import "./style.css";
+import Navbar from "./Navbar";
 import Home from "./Home";
+import { Routes, Route } from "react-router-dom";
+
 export default function App() {
   return (
     <>
-      <Home />
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route
+              path="/new"
+              element={
+                <div>
+                  <p>New form here</p>
+                </div>
+              }
+            ></Route>
+          </Routes>
+        </div>
+      </div>
     </>
   );
 }
