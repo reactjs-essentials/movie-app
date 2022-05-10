@@ -1,11 +1,13 @@
-import { React, useState, useEffect } from "react";
 import "./style.css";
 import FilmList from "./FilmList";
+import useFetch from "./useFetch";
 
 const Home = () => {
-  const [films, setFilms] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const {
+    error,
+    isLoading,
+    data: films,
+  } = useFetch("https://apimocha.com/lab-films/films");
 
   const handleDeleteFilm = (imdbID) => {
     setIsLoading(true);
@@ -17,28 +19,6 @@ const Home = () => {
       setIsLoading(false);
     });
   };
-
-  useEffect(() => {
-    fetch("https://apimocha.com/lab-films/films")
-      .then((res) => {
-        console.log(res);
-        if (!res.ok) {
-          throw Error(res.status);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setFilms(data);
-        setError(null);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        //Connection error
-        console.log(err.message);
-        setError(err.message);
-        setIsLoading(false);
-      });
-  }, []);
 
   return (
     <>
