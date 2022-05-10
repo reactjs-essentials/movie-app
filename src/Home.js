@@ -2,9 +2,6 @@ import { React, useState } from "react";
 import "./style.css";
 import FilmList from "./FilmList";
 
-
-
-
 const Home = () => {
   const data = [
     {
@@ -95,10 +92,15 @@ const Home = () => {
 
   const [films, setFilms] = useState(data);
 
+  const handleDeleteFilm = (imdbID) => {
+    const newFilms = films.filter((film) => film.imdbID !== imdbID);
+    setFilms(newFilms);
+  };
+
   return (
     <>
       <h1>Films List with Components</h1>
-      <FilmList films={films} />
+      <FilmList films={films} handleDeleteFilm={handleDeleteFilm}/>
     </>
   );
 };
