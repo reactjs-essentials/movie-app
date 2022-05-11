@@ -1,6 +1,7 @@
 import "./style.css";
 import Navbar from "./Navbar";
 import Home from "./Home";
+import FilmDetails from "./FilmDetails";
 import { Routes, Route } from "react-router-dom";
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
                 </div>
               }
             ></Route>
+            <Route path="/movie/:id" element={<FilmDetails />}></Route>
           </Routes>
         </div>
       </div>

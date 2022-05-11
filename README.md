@@ -73,7 +73,10 @@
 - Link
 - BrowserRouter
 
-### Part 09: React Form
+### Part 09: React Route Parameters
+
+- add button to each movie named "details"
+- add a new details component that is displayed in a new route "/movie/:id"
 
 #### Requirements
 
