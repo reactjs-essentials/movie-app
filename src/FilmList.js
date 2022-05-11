@@ -1,4 +1,5 @@
 import FilmItem from "./FilmItem";
+import { Link } from "react-router-dom";
 
 const FilmList = ({ films, handleDeleteFilm }) => {
   return (
@@ -9,6 +10,10 @@ const FilmList = ({ films, handleDeleteFilm }) => {
           {films.map((film) => (
             <li key={film.imdbID}>
               <FilmItem film={film} />
+              <link></link>
+              <Link to={`/movie/${film.imdbID}`}>
+                <button>Details</button>
+              </Link>
               <button onClick={() => handleDeleteFilm(film.imdbID)}>
                 Delete
               </button>
