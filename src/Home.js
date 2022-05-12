@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Films List with Components</h1>
+      <h1>Films List</h1>
       {isLoading && <p>...loading...</p>}
       {films && <FilmList films={films} handleDeleteFilm={handleDeleteFilm} />}
     </>
