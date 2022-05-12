@@ -13,12 +13,15 @@ const Home = () => {
   useEffect(() => {
     fetch("https://apimocha.com/moviesapi/film")
       .then((res) => res.json())
-      .then((data) => setFilms(data));
+      .then((data) => {
+        console.log(data);
+        setFilms(data);
+      });
   }, []);
 
   return (
     <>
-      <h1>Films List with Components</h1>
+      <h1>Film List</h1>
       {films && <FilmList films={films} handleDeleteFilm={handleDeleteFilm} />}
     </>
   );
