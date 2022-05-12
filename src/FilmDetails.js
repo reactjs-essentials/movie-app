@@ -4,54 +4,54 @@ import useFetch from "./useFetch";
 const FilmDetails = () => {
   const { id } = useParams();
   const {
-    data: movie,
+    data: film,
     error,
     isLoading,
-  } = useFetch("https://apimocha.com/moviesapi/movie/" + id);
+  } = useFetch("https://apimocha.com/moviesapi/film/" + id);
   return (
     <div className="film-details">
-      <h2>Movie details - {id}</h2>
+      <h2>film details - {id}</h2>
 
       {isLoading && <div>Loading...</div>}
       {error && <div>{error}</div>}
-      {movie && (
+      {film && (
         <div>
           <div>
-            <img src={movie.poster} alt="poster" />
+            <img src={film.poster} alt="poster" />
           </div>
           <dl>
             <dt>title:</dt>
-            <dd>{movie.title}</dd>
+            <dd>{film.title}</dd>
             <dt>year:</dt>
-            <dd>{movie.year}</dd>
+            <dd>{film.year}</dd>
             <dt>rated:</dt>
-            <dd>{movie.rated}</dd>
+            <dd>{film.rated}</dd>
             <dt>released:</dt>
-            <dd>{movie.released}</dd>
+            <dd>{film.released}</dd>
             <dt>runtime:</dt>
-            <dd>{movie.runtime}</dd>
+            <dd>{film.runtime}</dd>
             <dt>genre:</dt>
-            <dd>{movie.genre}</dd>
+            <dd>{film.genre}</dd>
             <dt>director:</dt>
-            <dd>{movie.director}</dd>
+            <dd>{film.director}</dd>
             <dt>writer:</dt>
-            <dd>{movie.writer}</dd>
+            <dd>{film.writer}</dd>
             <dt>actors:</dt>
-            <dd>{movie.actors}</dd>
+            <dd>{film.actors}</dd>
             <dt>plot:</dt>
-            <dd>{movie.plot}</dd>
+            <dd>{film.plot}</dd>
             <dt>language:</dt>
-            <dd>{movie.language}</dd>
+            <dd>{film.language}</dd>
             <dt>country:</dt>
-            <dd>{movie.country}</dd>
+            <dd>{film.country}</dd>
             <dt>plot:</dt>
-            <dd>{movie.plot}</dd>
+            <dd>{film.plot}</dd>
             <dt>awards:</dt>
-            <dd>{movie.awards}</dd>
+            <dd>{film.awards}</dd>
             <dt>awards:</dt>
-            <dd>{movie.awards}</dd>
+            <dd>{film.awards}</dd>
             <dt>imdbRating:</dt>
-            <dd>{movie.imdbRating}</dd>
+            <dd>{film.imdbRating}</dd>
             poster
           </dl>
         </div>

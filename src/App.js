@@ -20,7 +20,7 @@ export default function App() {
                 </div>
               }
             ></Route>
-            <Route path="/movie/:id" element={<FilmDetails />}></Route>
+            <Route path="/film/:id" element={<FilmDetails />}></Route>
           </Routes>
         </div>
       </div>
