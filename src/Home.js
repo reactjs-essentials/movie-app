@@ -9,7 +9,7 @@ const Home = () => {
 
   const handleDeleteFilm = (imdbID) => {
     setIsLoading(true);
-    fetch("https://apimocha.com/lab-films/films/" + imdbID, {
+    fetch("https://apimocha.com/moviesapi/film/" + imdbID, {
       method: "DELETE",
     }).then((res) => {
       const newFilms = films.filter((film) => film.imdbID !== imdbID);
@@ -19,7 +19,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetch("https://apimocha.com/lab-films/films")
+    fetch("https://apimocha.com/moviesapi/film")
       .then((res) => {
         console.log(res);
         if (!res.ok) {
