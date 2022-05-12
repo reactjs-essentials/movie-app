@@ -78,6 +78,7 @@
 - add button to each movie named "details"
 - add a new details component that is displayed in a new route "/film/:id"
 
+
 #### Requirements
 
 ...
