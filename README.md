@@ -13,8 +13,8 @@
 
 #### Requirements:
 
-- List a collection of movies
-- Movies object:
+- List a collection of films
+- films object:
   - id
   - title
   - year
@@ -76,7 +76,7 @@
 ### Part 09: React Route Parameters
 
 - add button to each movie named "details"
-- add a new details component that is displayed in a new route "/movie/:id"
+- add a new details component that is displayed in a new route "/film/:id"
 
 #### Requirements
 
