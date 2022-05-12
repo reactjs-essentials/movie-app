@@ -38,7 +38,7 @@
 
 #### Requirements
 
-- Connect to Api mocha - https://apimocha.com/lab-films/films
+- Connect to Api mocha - https://apimocha.com/moviesapi/film
 - Fetch data
 - Conditional render filmList if films are still not fetched
 
