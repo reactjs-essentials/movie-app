@@ -11,7 +11,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetch("https://apimocha.com/lab-films/films")
+    fetch("https://apimocha.com/moviesapi/film")
       .then((res) => res.json())
       .then((data) => setFilms(data));
   }, []);
