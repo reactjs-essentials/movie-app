@@ -4,15 +4,15 @@ const FilmItem = (props) => {
     <div>
       <dl>
         <dt>Film:</dt>
-        <dd>{film.Title}</dd>
+        <dd>{film.title}</dd>
         <dt>year:</dt>
-        <dd>{film.Year}</dd>
+        <dd>{film.year}</dd>
         <dt>genre:</dt>
-        <dd>{film.Genre}</dd>
+        <dd>{film.genre}</dd>
         <dt>director:</dt>
-        <dd>{film.Director}</dd>
+        <dd>{film.director}</dd>
         <dt>actors:</dt>
-        <dd>{film.Actors}</dd>
+        <dd>{film.ctors}</dd>
       </dl>
     </div>
   );
