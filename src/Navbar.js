@@ -6,10 +6,10 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="links">
           <li>
-            <Link to="/">Movies</Link>
+            <Link to="/">Films</Link>
           </li>
           <li>
-            <Link to="/new">New movie</Link>
+            <Link to="/new">New Film</Link>
           </li>
         </div>
       </nav>
@@ -18,14 +18,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-<section>
-  <ul>
-    <li>
-      <Link to="/">Films</Link>
-    </li>
-    <li>
-      <Link to="/counter">Counter</Link>
-    </li>
-  </ul>
-</section>;

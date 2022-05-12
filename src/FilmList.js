@@ -3,7 +3,7 @@ import FilmItem from "./FilmItem";
 const FilmList = ({ films, handleDeleteFilm }) => {
   return (
     <>
-      <h1>Movies list</h1>
+      <h1>Films list</h1>
       <div className="film-list">
         <ul>
           {films.map((film) => (
