@@ -10,13 +10,10 @@ const Home = () => {
   } = useFetch("https://apimocha.com/moviesapi/film");
 
   const handleDeleteFilm = (imdbID) => {
-    setIsLoading(true);
     fetch("https://apimocha.com/moviesapi/film/" + imdbID, {
       method: "DELETE",
     }).then((res) => {
-      const newFilms = films.filter((film) => film.imdbID !== imdbID);
-      setFilms(newFilms);
-      setIsLoading(false);
+      //TODO:
     });
   };
 
