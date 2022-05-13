@@ -75,13 +75,10 @@
 
 ### Part 09: React Route Parameters
 
-- add button to each movie named "details"
-- add a new details component that is displayed in a new route "/film/:id"
-
-
 #### Requirements
 
-...
+- add button to each movie named "details"
+- add a new details component that is displayed in a new route "/film/:id"
 
 ### Part 10: Styling app
 
@@ -89,19 +86,39 @@
 
 ...
 
-### Part 11: Rect tests
+### Part 11: Forms
+
+#### Requirements
+
+- Create new film form in route "/new"
+- navigate to home page after creation
+  ...
+
+### Part 12: Forms advanced
 
 #### Requirements
 
 ...
 
-### Part 12: Redux
+### Part 13: Rect tests
 
 #### Requirements
 
 ...
 
-### Part 13: Security
+### Part 14: Use Context
+
+#### Requirements
+
+...
+
+### Part 15: Redux
+
+#### Requirements
+
+...
+
+### Part 16: Security
 
 #### Requirements
 
