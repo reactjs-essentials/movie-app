@@ -88,13 +88,23 @@
 
 ### Part 11: Forms
 
-#### Requirements
+Keynotes:
+- controlled & uncontroled forms
+- setting up the value attribute from input prevent user from changing the input. in becomes an controlled and only possible to change via callback
+- controlled is the reccomended way: instand message feedback / disable enable, format text
 
+#### Requirements
 - Create new film form in route "/new"
 - navigate to home page after creation
   ...
 
 ### Part 12: Forms advanced
+
+
+- data-validation
+  - trigger points:
+    - on user input
+    - on form submission
 
 #### Requirements
 
