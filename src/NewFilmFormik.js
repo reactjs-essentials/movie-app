@@ -10,21 +10,13 @@ const NewFilmFormik = () => {
   );
 
   const selectedActors = [];
-
-  //   const handleGenderOnChange = (selectedOptions) => {
-  //     setNewFilm({
-  //       ...newFilm,
-  //       gender: selectedOptions,
-  //     });
-  //   };
-
-  //   const handleActorsOnChange = (values) => {
-  //     const actors = values.map((item) => item.value);
-  //     setNewFilm({
-  //       ...newFilm,
-  //       actors: actors,
-  //     });
-  //   };
+  const validateDirector = (value) => {
+    let error;
+    if (value.toLowerCase() === "will smith") {
+      error = "Nice try, will is banned";
+    }
+    return error;
+  };
   const navigate = useNavigate();
 
   return (
@@ -42,6 +34,15 @@ const NewFilmFormik = () => {
         }}
         validate={(values) => {
           const errors = {};
+          if (values.imdbID === "") {
+            errors.imdbID = "imdbID is required!";
+          }
+          if (values.title === "") {
+            errors.title = "title is required!";
+          }
+          if (values.year < 1885 || values.year > new Date().getFullYear()) {
+            errors.year = "year not valid!";
+          }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
@@ -76,22 +77,33 @@ const NewFilmFormik = () => {
             <ErrorMessage name="title" />
 
             <label htmlFor="year">Year</label>
-            <Field name="year" type="text" />
+            <Field name="year" type="number" />
             <ErrorMessage name="year" />
 
             <label htmlFor="year">Gender</label>
-            {values.gender && (
-              <Select
-                name="gender"
-                collection={allGenders}
-                isMultiple={true}
-                handleOnChange={(e) => setFieldValue("gender", e)}
-                value={values.gender}
-              ></Select>
-            )}
+
+            <Field
+              component="select"
+              name="gender"
+              onChange={(e) => {
+                setFieldValue(
+                  "gender",
+                  [...e.target.selectedOptions].map((o) => o.value)
+                );
+              }}
+              multiple={true}
+            >
+              {allGenders?.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </Field>
+            <ErrorMessage name="gender" />
+
             <label htmlFor="director">Director</label>
-            <Field name="director" type="text" />
-            <ErrorMessage name="diector" />
+            <Field name="director" type="text" validate={validateDirector} />
+            <ErrorMessage name="director" />
 
             <label htmlFor="year">Actors</label>
             <CreatableSelect

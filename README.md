@@ -113,9 +113,8 @@ Keynotes:
 
 - Field, Form, ErrorMessage
 - data-validation
-  - trigger points:
-    - on user input
-    - on form submission
+  - validate : Form level & field level
+  - schema
 
 ### Part 15: Using with Formik library for more advanced forms and data validation
 
