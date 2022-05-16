@@ -113,37 +113,30 @@ Keynotes:
 
 - Field, Form, ErrorMessage
 - data-validation
-  - trigger points:
-    - on user input
-    - on form submission
+  - validate : Form level & field level
+  - schema
+    - npm install yup --save
+    -
 
-### Part 15: Using with Formik library for more advanced forms and data validation
-
-- Formik Basics
-- data-validation
-  - trigger points:
-    - on user input
-    - on form submission
-
-### Part 16: Rect tests
+### Part 15: Rect tests
 
 #### Requirements
 
 ...
 
-### Part 17: Use Context
+### Part 16: Use Context
 
 #### Requirements
 
 ...
 
-### Part 18: Redux
+### Part 17: Redux
 
 #### Requirements
 
 ...
 
-### Part 19: Security
+### Part 18: Security
 
 #### Requirements
 
