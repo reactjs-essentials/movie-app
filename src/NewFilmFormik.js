@@ -3,6 +3,7 @@ import useFetch from "./useFetch";
 import Select from "./Select";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import CreatableSelect from "react-select/creatable";
+import * as Yup from "yup";
 
 const NewFilmFormik = () => {
   const { data: allGenders } = useFetch(
@@ -19,6 +20,15 @@ const NewFilmFormik = () => {
   };
   const navigate = useNavigate();
 
+  const newFilmSchema = Yup.object().shape({
+    imdbID: Yup.string().required("title is required!!"),
+    title: Yup.string().required("title is required!!"),
+    year: Yup.number()
+      .integer()
+      .moreThan(1884, "year not valid!")
+      .lessThan(new Date().getFullYear() + 1, "year not valid!"),
+  });
+
   return (
     <div className="new-film-form">
       <h2>Add new film</h2>
@@ -32,19 +42,20 @@ const NewFilmFormik = () => {
           director: "",
           actors: [],
         }}
-        validate={(values) => {
-          const errors = {};
-          if (values.imdbID === "") {
-            errors.imdbID = "imdbID is required!";
-          }
-          if (values.title === "") {
-            errors.title = "title is required!";
-          }
-          if (values.year < 1885 || values.year > new Date().getFullYear()) {
-            errors.year = "year not valid!";
-          }
-          return errors;
-        }}
+        validationSchema={newFilmSchema}
+        // validate={(values) => {
+        //   const errors = {};
+        //   if (values.imdbID === "") {
+        //     errors.imdbID = "imdbID is required!";
+        //   }
+        //   if (values.title === "") {
+        //     errors.title = "title is required!";
+        //   }
+        //   if (values.year < 1885 || values.year > new Date().getFullYear()) {
+        //     errors.year = "year not valid!";
+        //   }
+        //   return errors;
+        // }}
         onSubmit={(values, { setSubmitting }) => {
           fetch("https://apimocha.com/moviesapi/film/" + values.imdbID, {
             method: "POST",
