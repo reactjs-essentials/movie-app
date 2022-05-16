@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import useFetch from "./useFetch";
+import Select from "./Select";
+
+import CreatableSelect from "react-select/creatable";
 
 const NewFilmForm = () => {
   const [newFilm, setNewFilm] = useState({
     imdbID: "",
     title: "",
     year: "",
-    gender: "",
+    gender: [],
     director: "",
-    actors: "",
+    actors: [],
   });
+
+  // const [allGenders, setAllGenders] = useState(null);
+  const {
+    error,
+    isLoading,
+    data: allGenders,
+  } = useFetch("https://apimocha.com/moviesapi/gender");
+
+  const selectedActors = [];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +31,30 @@ const NewFilmForm = () => {
       body: JSON.stringify(newFilm),
     }).then(() => navigate("/"));
   };
+
+  const handleGenderOnChange = (selectedOptions) => {
+    setNewFilm({
+      ...newFilm,
+      gender: selectedOptions,
+    });
+  };
+
+  const handleActorsOnChange = (values) => {
+    const actors = values.map((item) => item.value);
+    setNewFilm({
+      ...newFilm,
+      actors: actors,
+    });
+  };
   const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   fetch("https://apimocha.com/moviesapi/gender")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setAllGenders([...data]);
+  //     });
+  // }, []);
 
   return (
     <div className="new-film-form">
@@ -64,28 +100,14 @@ const NewFilmForm = () => {
           }}
         ></input>
         <label>Gender</label>
-        <select
-          value={newFilm?.gender}
-          onChange={(e) => {
-            console.log("1", newFilm);
-            setNewFilm({
-              ...newFilm,
-              gender: e.target.value,
-            });
-          }}
-        >
-          <option value="Action">Action</option>
-          <option value="Adventure">Adventure</option>
-          <option value="Fantasy">Fantasy</option>
-          <option value="Drama">Drama</option>
-          <option value="Horror">Horror</option>
-          <option value="Sci-Fi">Sci-Fi</option>
-          <option value="Thriller">Thriller</option>
-          <option value="Biography">Biography</option>
-          <option value="Comedy">Comedy</option>
-          <option value="Crime">Crime</option>
-        </select>
-
+        {allGenders && (
+          <Select
+            collection={allGenders}
+            isMultiple={true}
+            handleOnChange={handleGenderOnChange}
+            value={newFilm?.gender}
+          ></Select>
+        )}
         <label>Director</label>
         <input
           type="text"
@@ -100,18 +122,12 @@ const NewFilmForm = () => {
           }}
         ></input>
         <label>Actors</label>
-        <input
-          type="text"
-          required
-          value={newFilm?.actors}
-          onChange={(e) => {
-            console.log("1", newFilm);
-            setNewFilm({
-              ...newFilm,
-              actors: e.target.value,
-            });
-          }}
-        ></input>
+        <CreatableSelect
+          className="label-input"
+          isMulti
+          onChange={handleActorsOnChange}
+          options={selectedActors}
+        />
         <button type="submit">Add Film</button>
       </form>
     </div>
