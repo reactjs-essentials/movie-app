@@ -100,10 +100,13 @@ Keynotes:
 - navigate to home page after creation
   ...
 
-### Part 12: Forms advanced
+### Part 12: Forms custom inputs
 
 - create custom select for gender
 - npm i react-select for actors
+
+### Part 13: Forms data validation
+
 - data-validation
   - trigger points:
     - on user input
@@ -113,25 +116,25 @@ Keynotes:
 
 ...
 
-### Part 13: Rect tests
+### Part 14: Rect tests
 
 #### Requirements
 
 ...
 
-### Part 14: Use Context
+### Part 15: Use Context
 
 #### Requirements
 
 ...
 
-### Part 15: Redux
+### Part 16: Redux
 
 #### Requirements
 
 ...
 
-### Part 16: Security
+### Part 17: Security
 
 #### Requirements
 
