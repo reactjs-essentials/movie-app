@@ -5,6 +5,7 @@ const Select = ({ collection, value, isMultiple, handleOnChange }) => {
         multiple={isMultiple}
         value={value}
         onChange={(e) => {
+          debugger;
           handleOnChange([...e.target.selectedOptions].map((o) => o.value));
         }}
       >

@@ -2,7 +2,7 @@ import "./style.css";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import FilmDetails from "./FilmDetails";
-import NewFilmForm from "./NewFilmForm";
+import NewFilmFormik from "./NewFilmFormik";
 import { Routes, Route } from "react-router-dom";
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/new" element={<NewFilmForm />}></Route>
+            <Route path="/new" element={<NewFilmFormik />}></Route>
             <Route path="/film/:id" element={<FilmDetails />}></Route>
           </Routes>
         </div>
