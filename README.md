@@ -89,17 +89,23 @@
 ### Part 11: Forms
 
 Keynotes:
+
 - controlled & uncontroled forms
 - setting up the value attribute from input prevent user from changing the input. in becomes an controlled and only possible to change via callback
 - controlled is the reccomended way: instand message feedback / disable enable, format text
 
 #### Requirements
+
 - Create new film form in route "/new"
 - navigate to home page after creation
   ...
 
-### Part 12: Forms advanced
+### Part 12: Forms custom inputs
 
+- create custom select for gender
+- npm i react-select for actors
+
+### Part 13: Forms data validation
 
 - data-validation
   - trigger points:
@@ -110,25 +116,25 @@ Keynotes:
 
 ...
 
-### Part 13: Rect tests
+### Part 14: Rect tests
 
 #### Requirements
 
 ...
 
-### Part 14: Use Context
+### Part 15: Use Context
 
 #### Requirements
 
 ...
 
-### Part 15: Redux
+### Part 16: Redux
 
 #### Requirements
 
 ...
 
-### Part 16: Security
+### Part 17: Security
 
 #### Requirements
 
