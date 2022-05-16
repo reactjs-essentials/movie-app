@@ -105,36 +105,45 @@ Keynotes:
 - create custom select for gender
 - npm i react-select for actors
 
-### Part 13: Forms data validation
+### Part 13: Using with Formik library Refactor to use Formik
 
+- Formik Basics
+
+### Part 14: Using with Formik Field for and data validation
+
+- Field, Form, ErrorMessage
 - data-validation
   - trigger points:
     - on user input
     - on form submission
 
-#### Requirements
+### Part 15: Using with Formik library for more advanced forms and data validation
 
-...
+- Formik Basics
+- data-validation
+  - trigger points:
+    - on user input
+    - on form submission
 
-### Part 14: Rect tests
-
-#### Requirements
-
-...
-
-### Part 15: Use Context
+### Part 16: Rect tests
 
 #### Requirements
 
 ...
 
-### Part 16: Redux
+### Part 17: Use Context
 
 #### Requirements
 
 ...
 
-### Part 17: Security
+### Part 18: Redux
+
+#### Requirements
+
+...
+
+### Part 19: Security
 
 #### Requirements
 
