@@ -84,7 +84,11 @@
 
 #### Requirements
 
-...
+
+- CSS Stylesheets
+- Inline Styles
+- Styted Components
+- CSS Modules
 
 ### Part 11: Forms
 
