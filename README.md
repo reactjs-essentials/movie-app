@@ -75,15 +75,54 @@
 
 ### Part 09: React Route Parameters
 
+#### Requirements
+
 - add button to each movie named "details"
 - add a new details component that is displayed in a new route "/film/:id"
 
+### Part 10: Styling app
 
 #### Requirements
 
-...
 
-### Part 10: Styling app
+- CSS Stylesheets
+- Inline Styles
+- Styted Components
+- CSS Modules
+
+### Part 11: Forms
+
+Keynotes:
+
+- controlled & uncontroled forms
+- setting up the value attribute from input prevent user from changing the input. in becomes an controlled and only possible to change via callback
+- controlled is the reccomended way: instand message feedback / disable enable, format text
+
+#### Requirements
+
+- Create new film form in route "/new"
+- navigate to home page after creation
+  ...
+
+### Part 12: Forms custom inputs
+
+- create custom select for gender
+- npm i react-select for actors
+
+### Part 13: Using with Formik library Refactor to use Formik
+
+- Formik Basics
+
+### Part 14: Using with Formik Field for and data validation
+
+- Field, Form, ErrorMessage
+- data-validation
+  - validate : Form level & field level
+  - schema
+    - npm install yup --save
+    -
+
+### Part 15: Rect tests
 
 #### Requirements
 
@@ -93,19 +132,19 @@
 - CSS Modules
 
 
-### Part 11: Rect tests
+### Part 16: Use Context
 
 #### Requirements
 
 ...
 
-### Part 12: Redux
+### Part 17: Redux
 
 #### Requirements
 
 ...
 
-### Part 13: Security
+### Part 18: Security
 
 #### Requirements
 

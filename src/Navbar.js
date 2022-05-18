@@ -21,14 +21,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-<section>
-  <ul>
-    <li>
-      <Link to="/">Films</Link>
-    </li>
-    <li>
-      <Link to="/counter">Counter</Link>
-    </li>
-  </ul>
-</section>;
