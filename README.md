@@ -144,6 +144,11 @@ Keynotes:
 
 ...
 
+### Part 18: Hooks advanced/Custom Hooks
+
+#### Requirements
+
+...
 ### Part 18: Security
 
 #### Requirements
