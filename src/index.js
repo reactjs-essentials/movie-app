@@ -4,12 +4,13 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { Provider } from 'react-redux'
 import watchlistReducer  from './reducers/watchlistReducer'
-import { createStore } from 'react-redux'
-
+import { configureStore } from '@reduxjs/toolkit'
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
-const store = createStore(watchlistReducer)
+const store = configureStore({
+  reducer : watchlistReducer,
+})
 
 root.render(
   <StrictMode>
