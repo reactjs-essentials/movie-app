@@ -31,6 +31,9 @@ const Navbar = () => {
                 <Link to="/new">New film</Link>
               </li>
               <li>
+                <Link to="/watchlist">WatchList</Link>
+              </li>
+              <li>
                 <button onClick={handleChangeTheme}>Change Theme</button>
               </li>
               <li>

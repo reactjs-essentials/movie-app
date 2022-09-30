@@ -1,6 +1,7 @@
 import FilmItem from "./FilmItem";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import {useSelector, useDispatch} from 'react-redux';
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -24,6 +25,11 @@ const Button = styled.button`
 const TomatoButton = styled(Button)`
   color: red;
   border-color: red;
+`;
+
+const BlueButton = styled(Button)`
+  color: blue;
+  border-color: blue;
 `;
 
 const StyledUl = styled.ul`
@@ -51,7 +57,21 @@ const StyledLi = styled.li`
     
 `;
 
+
 const FilmList = ({ films, handleDeleteFilm }) => {
+
+
+//const state = useSelector(state => state)
+const dispatch = useDispatch()
+
+function addWatchList(film) {
+  return {
+      type: "ADD_FILM",
+      item : film
+  };
+};
+
+
   return (
     <>
       <Title>Film list</Title>
@@ -67,6 +87,9 @@ const FilmList = ({ films, handleDeleteFilm }) => {
                 <TomatoButton onClick={() => handleDeleteFilm(film.imdbID)}>
                   Delete
                 </TomatoButton>
+                <BlueButton onClick={() => dispatch(addWatchList(film))}>
+                  WatchList
+                </BlueButton>
               </nav>
             </StyledLi>
           ))}
