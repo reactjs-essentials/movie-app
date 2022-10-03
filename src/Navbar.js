@@ -1,22 +1,30 @@
 import { Routes, Route, Link } from "react-router-dom";
-import './navbar.css'
+import "./navbar.css";
 import { useContext } from "react";
 import ThemeContext from "./context/ThemeContext";
 import { withTheme } from "styled-components";
 
-
+import { UserContext } from "./context/UserContext";
 const Navbar = () => {
-
   //const themeContext = useContext(ThemeContext)
   //console.log(themeContext)
 
-  const { theme, setTheme } = useContext(ThemeContext)
+  const { theme, setTheme } = useContext(ThemeContext);
+  const { user, signIn, signOut } = useContext(UserContext);
 
   function handleChangeTheme() {
-    theme && theme == 'light' ? setTheme('dark') : setTheme('light')
+    theme && theme == "light" ? setTheme("dark") : setTheme("light");
     document.documentElement.style.setProperty("data-theme", theme);
-    console.log(theme)
+    console.log(theme);
   }
+
+  const handleLogin = () => {
+    signIn();
+  };
+
+  const handleLogout = () => {
+    signOut();
+  };
 
   return (
     <>
@@ -39,10 +47,17 @@ const Navbar = () => {
               <li>
                 <a>{theme}</a>
               </li>
+              <li style={{ float: "right" }}>
+                <button onClick={handleLogin}>Login</button>
+              </li>
+              <li style={{ float: "right" }}>
+                <button onClick={handleLogout}>Logout</button>
+              </li>
             </ul>
           </div>
         </nav>
       </section>
+      {JSON.stringify(user)}
     </>
   );
 };

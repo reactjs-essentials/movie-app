@@ -1,8 +1,11 @@
 import "./style.css";
 import FilmList from "./FilmList";
 import useFetch from "./useFetch";
+import { useContext } from "react";
+import { UserContext } from "./context/UserContext";
 
 const Home = () => {
+  const { user } = useContext(UserContext);
   const {
     error,
     isLoading,
@@ -10,8 +13,10 @@ const Home = () => {
   } = useFetch("https://apimocha.com/moviesapi/film");
 
   const handleDeleteFilm = (imdbID) => {
+    console.log(imdbID);
     fetch("https://apimocha.com/moviesapi/film/" + imdbID, {
       method: "DELETE",
+      headers: { Authorization: `Bearer ${user.token}` },
     }).then((res) => {
       //TODO:
     });

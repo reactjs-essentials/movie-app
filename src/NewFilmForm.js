@@ -26,6 +26,7 @@ const NewFilmForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     fetch("https://apimocha.com/moviesapi/film/" + newFilm.imdbID, {
       method: "POST",
       body: JSON.stringify(newFilm),
