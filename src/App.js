@@ -5,6 +5,7 @@ import Home from "./Home";
 import FilmDetails from "./FilmDetails";
 import WatchList from "./WatchList";
 import NewFilmFormik from "./NewFilmFormik";
+import RequireAuth from "./common/RequireAuth";
 import { Routes, Route } from "react-router-dom";
 import { ThemeContextProvider } from "./context/ThemeContext";
 import {
@@ -25,7 +26,22 @@ export default function App() {
               <Route path="/" element={<Home />}></Route>
               <Route path="/new" element={<NewFilmFormik />}></Route>
               <Route path="/film/:id" element={<FilmDetails />}></Route>
-              <Route path="/watchlist" element={<WatchList />}></Route>
+              <Route
+                path="/loginrequired"
+                element={
+                  <>
+                    <h1>LOGIN REQUIRED</h1>
+                  </>
+                }
+              ></Route>
+              <Route
+                path="/watchlist"
+                element={
+                  <RequireAuth>
+                    <WatchList />
+                  </RequireAuth>
+                }
+              ></Route>
             </Routes>
           </div>
         </UserContextProvider>

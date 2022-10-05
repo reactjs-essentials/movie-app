@@ -37,7 +37,7 @@ export function UserContextProvider({ children }) {
 
   const signOut = () => {
     console.log("SigningOut");
-    setUser(null);
+    setUser(userContextInitialState);
   };
   const [user, setUser] = useState(userContextInitialState);
   return (

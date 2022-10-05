@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { useContext } from "react";
 import ThemeContext from "./context/ThemeContext";
@@ -8,6 +8,7 @@ import { UserContext } from "./context/UserContext";
 const Navbar = () => {
   //const themeContext = useContext(ThemeContext)
   //console.log(themeContext)
+  const navigate = useNavigate();
 
   const { theme, setTheme } = useContext(ThemeContext);
   const { user, signIn, signOut } = useContext(UserContext);
@@ -20,10 +21,12 @@ const Navbar = () => {
 
   const handleLogin = () => {
     signIn();
+    navigate("/");
   };
 
   const handleLogout = () => {
     signOut();
+    navigate("/");
   };
 
   return (
@@ -38,9 +41,12 @@ const Navbar = () => {
               <li>
                 <Link to="/new">New film</Link>
               </li>
-              <li>
-                <Link to="/watchlist">WatchList</Link>
-              </li>
+              {user.isAuthenticathed && (
+                <li>
+                  <Link to="/watchlist">WatchList</Link>
+                </li>
+              )}
+
               <li>
                 <button onClick={handleChangeTheme}>Change Theme</button>
               </li>
