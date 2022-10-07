@@ -11,11 +11,11 @@ const Navbar = () => {
   //console.log(themeContext)
 
   const { theme, setTheme } = useContext(ThemeContext)
+  console.log(ThemeContext)
 
   function handleChangeTheme() {
     theme && theme == 'light' ? setTheme('dark') : setTheme('light')
     document.documentElement.style.setProperty("data-theme", theme);
-    console.log(theme)
   }
 
   return (
