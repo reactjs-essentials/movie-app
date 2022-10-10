@@ -17,8 +17,8 @@ Movie-app labs details in [reactjs: essentials](https://github.com/reactjs-essen
 - Add pass list to a component named FilmList. Pass Film content to another component named FilmItem
  
 # LAB: Challange - remove item
-### starting branch: Starting point: movie-app-part-02
-### ending branch: Starting point: movie-app-part-03
+### starting branch: movie-app-part-02
+### ending branch: movie-app-part-03
 ## requirements:
 - add a button on each FilmItem that remove the item from the list being displayed
 
