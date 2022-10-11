@@ -2,9 +2,9 @@
 Collection of labs devided by branches pointing for the starting and ending of each lab.
 Movie-app labs details in [reactjs: essentials](https://github.com/reactjs-essentials/training-content)
 
-# LAB: List & components integration
-#### starting branch: movie-app-part-01
-#### ending branch:movie-app-part-02
+# LAB 1: Lists 
+#### starting branch: movie-app-part-00
+#### ending branch:movie-app-part-01
 ### requirements:
 - Add a component that list a collection of movies
 - Movies object:
@@ -14,9 +14,14 @@ Movie-app labs details in [reactjs: essentials](https://github.com/reactjs-essen
   - genre
   - director
   - actors
+  - 
+# LAB 2: Components integration
+#### starting branch: movie-app-part-01
+#### ending branch:movie-app-part-02
+### requirements:
 - Add pass list to a component named FilmList. Pass Film content to another component named FilmItem
  
-# LAB: Challange - Remove item
+# LAB 3: Challange - Remove item
 ### starting branch: movie-app-part-02
 ### ending branch: movie-app-part-03
 ## requirements:
